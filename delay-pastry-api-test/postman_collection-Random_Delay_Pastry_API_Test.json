@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Random Delay Pastry API Test",
+    "_postman_id": "6207b5a4-456d-416f-be99-d49faa82beee",
+    "description": "Sends 10 requests to Pastry API with random delay values between 50ms and 999ms.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "updatedAt": "2025-05-12T10:38:00.795147Z"
+  },
+  "item": [
+    {
+      "name": "Pastry Request with Random Delay",
+      "id": "e4cd6e38-474c-4e34-880d-31df7d7ce5e0",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/rest/API+Pastry+-+2.0/2.0.0/pastry?delay={{delay}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "rest",
+            "API+Pastry+-+2.0",
+            "2.0.0",
+            "pastry"
+          ],
+          "query": [
+            {
+              "key": "delay",
+              "value": "{{delay}}"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// Generate random delay between 50 and 999",
+              "const randomDelay = Math.floor(Math.random() * (999 - 50 + 1)) + 50;",
+              "",
+              "// Set it as a variable",
+              "pm.environment.set(\"delay\", randomDelay);",
+              "",
+              "// Track iteration count",
+              "let iteration = parseInt(pm.environment.get(\"iteration\") || \"0\");",
+              "iteration++;",
+              "pm.environment.set(\"iteration\", iteration);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let iteration = parseInt(pm.environment.get(\"iteration\") || \"0\");",
+              "",
+              "if (iteration < 10) {",
+              "    postman.setNextRequest(pm.info.requestName);",
+              "} else {",
+              "    postman.setNextRequest(null);",
+              "    pm.environment.set(\"iteration\", 0);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": []
+}
