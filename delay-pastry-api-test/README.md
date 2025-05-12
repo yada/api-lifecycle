@@ -33,10 +33,7 @@ Where `VALUE` is dynamically generated on each request.
 1. Open Postman and import the file:  
    [`postman_collection-Random_Delay_Pastry_API_Test.json`](./postman_collection-Random_Delay_Pastry_API_Test.json)
 
-2. Create an environment variable:  
-   `iteration = 0`
-
-3. Use the **Collection Runner** to execute the request.  
+2. Use the **Collection Runner** to execute the request.  
 
 ## ⚡ k6
 

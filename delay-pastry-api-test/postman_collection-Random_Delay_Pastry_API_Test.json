@@ -46,7 +46,7 @@
               "pm.environment.set(\"delay\", randomDelay);",
               "",
               "// Track iteration count",
-              "let iteration = parseInt(pm.environment.get(\"iteration\") || \"0\");",
+              "let iteration = 0;",
               "iteration++;",
               "pm.environment.set(\"iteration\", iteration);"
             ],
