@@ -30,7 +30,8 @@ Where `VALUE` is dynamically generated on each request.
 
 ### ▶️ How to Use
 
-1. Open Postman and import the file:  
+1. Open Postman and import the file:
+  
    [`postman_collection-Random_Delay_Pastry_API_Test.json`](./postman_collection-Random_Delay_Pastry_API_Test.json)
 
 2. Use the **Collection Runner** to execute the request.  
@@ -40,6 +41,7 @@ Where `VALUE` is dynamically generated on each request.
 ### ▶️ How to Use
 
 1. Download the k6 script:
+
    [`k6-Random_Delay_Pastry_API_Test.js`](./k6-Random_Delay_Pastry_API_Test.js)
 
 2. Run the script: 
