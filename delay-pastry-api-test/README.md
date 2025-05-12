@@ -24,7 +24,7 @@ Where `VALUE` is dynamically generated on each request.
 ## 📦 Requirements
 
 - Microcks running locally (or remotely) with a mock for the `API Pastry - 2.0` endpoint
-- [Postman](https://www.postman.com/downloads/) or [k6](https://k6.io/docs/getting-started/installation/) installed
+- [Postman](https://www.postman.com/downloads/) or [k6](https://grafana.com/docs/k6/latest/set-up/install-k6/) installed
 
 ## 🧪 Postman
 
@@ -39,7 +39,9 @@ Where `VALUE` is dynamically generated on each request.
 
 ### ▶️ How to Use
 
-1. Make sure [k6 is installed](https://k6.io/docs/getting-started/installation/)
+1. Download the k6 script:
+   [`k6-Random_Delay_Pastry_API_Test.js`](./k6-Random_Delay_Pastry_API_Test.js)
+
 2. Run the script: 
 ```bash
 k6 run k6-Random_Delay_Pastry_API_Test.js
